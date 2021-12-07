@@ -27,3 +27,10 @@ The Public Test Tree had an R^2 of 0.345 and an RMSE of 16.82
 - Given more time with the data, this project would calculate the rate of change for these features and run a time series model to see if a given lag year for a student is of importance for graduating. 
 - The graduation rate for IPEDS only calculates first time, full-time students, which excludes transfers,  winter enrollment, and part-timers, possibly [up to 50% of students](), so expanding the target to include these students would give a more accurate protrayal of student success. I would also like to track the 10 year default rate on loans for Illinois schools, as the debt places an already disproportional burden on minority communities. 
 - Finally, I am willing to consider optimal financial aid rates, which furthers your goal towards equity and sustainability. 
+
+
+├── images
+├── .gitignore
+├── Black_Graduaction_Rates.ipynb
+├── Black_Graduation_Rates_presentation.pdf
+└── README.md
