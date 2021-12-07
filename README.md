@@ -7,26 +7,29 @@ In [Public Act 102-0570](https://ilga.gov/legislation/publicacts/fulltext.asp?Na
 This project targets 6-year black bachelors graduation rates for first-time, full-time students-- the typical measure for college student success-- using U.S. public and private university data from the Integrated Postsecondary Education Data System (IPEDS). This project aims to offer data-driven advice on how Illinois' universities might better leverage their financials towards black student success.
 
 # Data Understanding
-Data was accessed through [IPEDS](https://nces.ed.gov/ipeds/use-the-data/download-access-database), using 10 years (2009-2020) of their Access database files (.accdb), pyodbc module and SQL query was used to pull financial data (financial data (tables: DRVF, F_F1A, and F_F2) from 1681 public (587) and private (1094) universities. Nans were imputed.  
+Data was accessed through [IPEDS](https://nces.ed.gov/ipeds/use-the-data/download-access-database). After downloading 10 years(2009-2020) of their Access database files (.accdb), [pyodbc module](https://pypi.org/project/pyodbc/) and SQL query were used to pull financial data (financial data (tables: DRVF, F_F1A, and F_F2) from 1681 public (587) and private (1094) universities (The IPEDS website does offer a [user-friendly query interface](https://nces.ed.gov/ipeds/datacenter/InstitutionList.aspx?goToReportId=1), but only 20 variables could be pulled at a time. The databases, private and public, were kept separate because of the differing financial categories (table and variables with F1 are from public Universities, while F2 is private not-for-profits-- f3 is private, for-profit, and was excluded from this project). Limitations with IPEDS data are discuss below.  
 
-# Modeling
-Multiple Linear Regression, Stepwise, Lasso, and Random forest selection, Decision Tree with Random Forest selection, and obviously random forest tuning to feed features back into the more interpretable models.
+# Data Preparation
+If the school did not have the target variable, it was excluded from the analysis. Sadly, Governors State University, a public school in Illinois, did not have any target information; therefore it was removed.School names and variable titles were merged and transposed for clarity. And columns with 40% data were dropped. Some of the financial metrics changed in 2014, so some columns are missin 40% of the data. These columns were the subcategories of Benefits, Operation and Maintenance of Plant, Depreciation, Interest, All Other for several categories. These categories post 2014 are now summarized in 'Total amount' and 'Salaries and wages' for Instruction, Research, Public service, etc. These subcategories and others missing 40% of data were dropped.
+
+# Methods
+Because the Illinois Board of Higher Education is seeking specific policy advice, this project will avoid black-box and hard-to-interpret models. The approach is simple: starting with a baseline, iterate through Linear Regressions to find the best model. Different Selection types, like Stepwise(to only pull statistically significant features), Lasso (to penalize weak features), Random Forest Regression are used A Pipeline to preprocess imputing and standardizing was also used to speed up the process.Data was normalized at point of regression, to make it more readable for the model.
 
 # Evaluation
-Private and public had different optimal models: Linear Regression with Lasso for Private; Decision Tree with random forest selection for Public. 
-The Private Test Linear Regression had an R^2 of 0.312 and a RMSE of 22.07
-The Public Test Tree had an R^2 of 0.345 and an RMSE of 16.82
+For both Private and Public models, the best model was the stepwise with lasso mulitple linear regression. R^2 was chosen to see how much of the variance can be explained by the model. The Root Mean Squared Error tries to reduce the mistakes the model will make in prediction, giving a better sense whether the feature will actually influence black graduations or not. 
+The Private Test Linear Regression had an R^2 of 0.271 and a RMSE of 22.71
+The Public Test Linear Regression had an R^2 of 0.278 and an RMSE of 17.65
 
 # Recommendations
-1) Focus on NIU and CSU. Because their graduation rates are so low (8% and 16%), marginal improvments will make the largest difference. For example, if given the current enrollment at NIU and successful changes to increase graduation rates to match the average of illinois (37%), an additional 600 black students would have degrees. This would in turn lead to an 11% in the states overall black student graduation rate. 
-2) Incentivize discounts on sales and services of auxiliary enterprises, which may help supplement the non-tiution related costs of attending school. 
-3) Encourage public schools to hire more institutional support, as it is the third most important feature for public schools. This means better management, operations, and fundraising efforts. 
-4) Private schools seems to be about accumulating assets like books in libraries, art, equipment, and property. This likely is just a reflection of wealthy schools doing well, not a direct causal link.
+The recommendations for Public universities are as follows: 
+1) Incentivize 5 percent increases in budget allocation towards research. This could mean expanding already well established research universities, like the University of Illinois, by offering research prizes or through appropriations.This could also mean starting research at on of the four public universities in Illinois that only allocate 1 percent to Research.
+2) Offer more discounts and allowances for auxilliary services, either through grants or appropriations. The model predicts an additional \\$1,000 per student increases a percentage point in blk grs. 
 
 # Next Steps
-- Given more time with the data, this project would calculate the rate of change for these features and run a time series model to see if a given lag year for a student is of importance for graduating. 
-- The graduation rate for IPEDS only calculates first time, full-time students, which excludes transfers,  winter enrollment, and part-timers, possibly [up to 50% of students](), so expanding the target to include these students would give a more accurate protrayal of student success. I would also like to track the 10 year default rate on loans for Illinois schools, as the debt places an already disproportional burden on minority communities. 
-- Finally, I am willing to consider optimal financial aid rates, which furthers your goal towards equity and sustainability. 
+- To improve model performance, I would like to run similar regressions for all of IPEDS data including Admissions, Enrollment, Retention, Human Resource Information, and Institutional Characteristics.Then combine significant and impactful features for a more robust predictive model and more precise policy advice. This would bring specificity for where to apply state grants and appropriations. Only 28% of variance in the target is explained by my model, so bringing in more significant variable might help. Obviously, institutions can only do so much, but I would like to maximize this effort. Then combine significant and impactful features for a more robust predictive model and more precise policy advice. This would bring specificity for where to apply state grants and appropriations.  
+- The graduation rate for IPEDS only calculates first time, full-time students This excludes transfers,  winter enrollment, and part-timers, possibly [up to 50% of students](). Expanding the target to include these students would give a more accurate protrayal of student success. 
+- Finally, I am willing to further the tenets of a Thriving Illinois, by considering optimal financial aid rates for low-income and minority students.
+ 
 
 
 ├── images
