@@ -30,10 +30,21 @@ The recommendations for Public universities are as follows:
 - The graduation rate for IPEDS only calculates first time, full-time students This excludes transfers,  winter enrollment, and part-timers, possibly [up to 50% of students](). Expanding the target to include these students would give a more accurate protrayal of student success. 
 - Finally, I am willing to further the tenets of a Thriving Illinois, by considering optimal financial aid rates for low-income and minority students.
  
-
-
-├── images
-├── .gitignore
-├── Black_Graduaction_Rates.ipynb
-├── Black_Graduation_Rates_presentation.pdf
-└── README.md
+ For More Information
+ 
+ See the full analysis in the Jupyter Notebook or review this presentation. 
+ 
+ For additional info, contact Andrew Schmeck at andrew.schmeck@gmail.com
+ 
+ Repository Structure
+ 
+├─ images
+│  ├─ Concatenate.png
+│  ├─ gradhats.jpg
+│  ├─ gridsearch_pr.png
+│  ├─ gridsearch_pub.png
+│  └─ retrieval.png
+├─ .gitignore
+├─ Black_Graduation_Rates_presentation.pdf
+├─ Black_Graduation_Rates_notebook.ipynb
+└─ README.md
