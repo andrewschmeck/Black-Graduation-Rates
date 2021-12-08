@@ -34,7 +34,7 @@ The recommendations for Public universities are as follows:
  
  For More Information
  
- See the full analysis in the Jupyter Notebook or review this presentation. 
+ See the full analysis in the [Jupyter Notebook](https://github.com/andrewschmeck/Black-Graduation-Rates/blob/main/Black_Graduation_Rates_notebook.ipynb) or review this [presentation](https://github.com/andrewschmeck/Black-Graduation-Rates/blob/main/Black_Graduation_Rates_presentation.pdf). 
  
  For additional info, contact Andrew Schmeck at andrew.schmeck@gmail.com
  
