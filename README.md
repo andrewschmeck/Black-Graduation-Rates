@@ -1,3 +1,4 @@
+<img src="images/gradhats.jpg" align='center' alt="Students in cap and gown sitting at graduation" style="width: 800px;"/>
 # Technical Overview
 Targeting black college graduation rates, this project seeks to answer a regression problem using only financial information from public and private four year colleges in US. Data was clean of Nans by simple imputation. Methods for modeling included Muliple Linear Regression and Regression Decision Trees, using Lasso, Stepwise, and Random Forest Regression feature selection, along with GridSearchCV hyperparameter tuning. 
 
