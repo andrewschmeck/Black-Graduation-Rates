@@ -19,8 +19,8 @@ Because the Illinois Board of Higher Education is seeking specific policy advice
 
 # Evaluation
 For both Private and Public models, the best model was the stepwise with lasso mulitple linear regression. R^2 was chosen to see how much of the variance can be explained by the model. The Root Mean Squared Error tries to reduce the mistakes the model will make in prediction, giving a better sense whether the feature will actually influence black graduations or not. 
-The Private Test Linear Regression had an R^2 of 0.271 and a RMSE of 22.71
-The Public Test Linear Regression had an R^2 of 0.278 and an RMSE of 17.65
+The Private Test Linear Regression had an R^2 of 0.271 and a RMSE of 22.71.
+The Public Test Linear Regression had an R^2 of 0.278 and an RMSE of 17.65.
 
 # Recommendations
 The recommendations for Public universities are as follows: 
