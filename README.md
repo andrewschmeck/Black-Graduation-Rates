@@ -25,7 +25,7 @@ The Public Test Linear Regression had an R^2 of 0.278 and an RMSE of 17.65.
 # Recommendations
 The recommendations for Public universities are as follows: 
 1) Incentivize 5 percent increases in budget allocation towards research. This could mean expanding already well established research universities, like the University of Illinois, by offering research prizes or through appropriations.This could also mean starting research at on of the four public universities in Illinois that only allocate 1 percent to Research.
-2) Offer more discounts and allowances for auxilliary services, either through grants or appropriations. The model predicts an additional \\$1,000 per student increases a percentage point in blk grs. 
+2) Offer more discounts and allowances for auxilliary services, either through grants or appropriations. The model predicts an additional \$1,000 per student increases a percentage point in blk grs. 
 
 # Next Steps
 - To improve model performance, I would like to run similar regressions for all of IPEDS data including Admissions, Enrollment, Retention, Human Resource Information, and Institutional Characteristics.Then combine significant and impactful features for a more robust predictive model and more precise policy advice. This would bring specificity for where to apply state grants and appropriations. Only 28% of variance in the target is explained by my model, so bringing in more significant variable might help. Obviously, institutions can only do so much, but I would like to maximize this effort. Then combine significant and impactful features for a more robust predictive model and more precise policy advice. This would bring specificity for where to apply state grants and appropriations.  
