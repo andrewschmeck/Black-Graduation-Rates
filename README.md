@@ -18,7 +18,7 @@ If the school did not have the target variable, it was excluded from the analysi
 Because the Illinois Board of Higher Education is seeking specific policy advice, this project will avoid black-box and hard-to-interpret models. The approach is simple: starting with a baseline, iterate through Linear Regressions to find the best model. Different Selection types, like Stepwise(to only pull statistically significant features), Lasso (to penalize weak features), and Random Forest Regression are used. A Pipeline to preprocess imputing and standardizing was also used to speed up the process. Data was normalized at point of regression, to make it more readable for the model.
 
 # Evaluation
-For both Private and Public models, the best model was the stepwise with lasso mulitple linear regression. R^2 was chosen to see how much of the variance can be explained by the model. The Root Mean Squared Error tries to reduce the mistakes the model will make in prediction, giving a better sense whether the feature will actually influence black graduations or not. 
+For both Private and Public models, the best model was the stepwise with lasso mulitple linear regression. R^2 was chosen to see how much of the variance can be explained by the model. The Root Mean Squared Error was the measure of loss, giving a better sense whether the feature will actually influence black graduations or not. 
 The Private Test Linear Regression had an R^2 of 0.271 and a RMSE of 22.71.
 The Public Test Linear Regression had an R^2 of 0.278 and an RMSE of 17.65.
 
